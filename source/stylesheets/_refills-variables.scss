@@ -9,9 +9,11 @@ $refills-color: lighten(desaturate(teal, 60%), 40%);
 $refills-accent-color: #477dca;
 $refills-logo-color: #93e9be;
 $refills-anchor-color: #f55481;
-$refills-hero-background: #F1F1F1;
+$refills-hero-background: #F8F8F8;
 $refills-highlight-color: #bbb295;
 $refills-white-shadow: 0 1px 1px transparentize(#fff, 0.6);
+$empties-anchor-color: #776FAA;
+$empties-hover-color: darken($empties-anchor-color, 15%);
 
 $refills-medium-screen: em(640);
 $refills-large-screen: em(860);

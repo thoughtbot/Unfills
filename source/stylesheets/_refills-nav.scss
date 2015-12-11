@@ -7,15 +7,25 @@ section.inner-content {
 .refills-menu-anchor {
   @include position(fixed, 4.5em null null 1em);
   @include size(50px);
-  border: 1px solid $refills-accent-color;
+  border: 1px solid $empties-anchor-color;
   border-radius: 50%;
   cursor: pointer;
   display: inline-block;
-  font-size: 1em;
-  padding: 0.7em 1em;
+  fill: $empties-anchor-color;
   margin-bottom: 1.5em;
+  padding: 1em;
+  text-align: center;
   transition: all 0.2s ease-in-out;
   z-index: 9999;
+
+  &:hover {
+    border-color: $empties-hover-color;
+    fill: $empties-hover-color;
+  }
+
+  svg {
+    @include size(14px);
+  }
 
   &.fixedsticky-on {
     margin-top: 0;
@@ -23,11 +33,6 @@ section.inner-content {
 
   &.fixedsticky-off {
     position: fixed;
-  }
-
-  img {
-    @include size(30px 26px);
-    max-width: 100%;
   }
 }
 

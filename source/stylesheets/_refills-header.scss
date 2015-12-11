@@ -23,22 +23,23 @@
     margin: 0 auto 1.4em auto;
 
     svg {
-      @include size(90px);
-      background: $refills-body-background-color;
+      @include size(80px);
+      background: $empties-anchor-color;
       border-radius: 50%;
-      fill: #666;
-      padding: 0.5em;
+      fill: white;
+      padding: 0.3em;
 
       @include media($refills-medium-screen) {
-        @include size(130px);
+        @include size(120px);
+        padding: 0.5em;
       }
     }
   }
 
   h2 {
-    font-family: $refills-second-serif;
+    font-family: $helvetica;
     font-size: 1.4em;
-    font-weight: 100;
+    font-weight: 300;
     line-height: 1.4em;
     margin: 0 auto 2em auto;
     max-width: 80%;
@@ -66,12 +67,12 @@
   }
 
   a {
-    color: $refills-accent-color;
+    color: $empties-anchor-color;
     text-decoration: none;
 
     &:focus,
     &:hover {
-      color: lighten($refills-accent-color, 10%);
+      color: $empties-hover-color;
     }
   }
 
