@@ -1,4 +1,4 @@
-$sidebar-width: em(200);
+$sidebar-width: 200px;
 
 section.inner-content {
   margin-left: auto;
@@ -7,7 +7,7 @@ section.inner-content {
 .refills-menu-anchor {
   @include position(fixed, 4.5em null null 1em);
   @include size(50px);
-  border: 1px solid darken(desaturate(#93e9be, 50), 15%);
+  border: 1px solid $refills-accent-color;
   border-radius: 50%;
   cursor: pointer;
   display: inline-block;
