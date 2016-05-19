@@ -1,32 +1,59 @@
-$(".js-vertical-tab-content").hide();
-$(".js-vertical-tab-content:first").show();
+!(function () {
 
-/* if in tab mode */
-$(".js-vertical-tab").click(function(event) {
-  event.preventDefault();
+	function VerticalTabs (context) {
+		this.$context = $(context);
+		this.$tabpanels = this.$context.find(".js-vertical-tab-content");
 
-  $(".js-vertical-tab-content").hide();
-  var activeTab = $(this).attr("rel");
-  $("#"+activeTab).show();
+		this.$context
+			.on('click.empties.verticaltabs', '.js-vertical-tab', this.onTabClick.bind(this))
+			.on('click.empties.verticaltabs', ".js-vertical-tab-accordion-heading", this.onHeadingClick.bind(this));
+	}
 
-  $(".js-vertical-tab").removeClass("is-active");
-  $(this).addClass("is-active");
+	VerticalTabs.prototype = {
+		
+		init: function () {
+			this.$tabpanels.hide();
+			this.$tabpanels.first().show();
+		},
 
-  $(".js-vertical-tab-accordion-heading").removeClass("is-active");
-  $(".js-vertical-tab-accordion-heading[rel^='"+activeTab+"']").addClass("is-active");
-});
 
-/* if in accordion mode */
-$(".js-vertical-tab-accordion-heading").click(function(event) {
-  event.preventDefault();
+		onTabClick: function (event) {
+			event.preventDefault();
 
-  $(".js-vertical-tab-content").hide();
-  var accordion_activeTab = $(this).attr("rel");
-  $("#"+accordion_activeTab).show();
+			var $tab = $(event.currentTarget);
+			this.$tabpanels.hide();
 
-  $(".js-vertical-tab-accordion-heading").removeClass("is-active");
-  $(this).addClass("is-active");
+			var activeTab = $tab.attr("rel");
+			this.$context.find("#"+activeTab).show();
 
-  $(".js-vertical-tab").removeClass("is-active");
-  $(".js-vertical-tab[rel^='"+accordion_activeTab+"']").addClass("is-active");
-});
+			this.$context.find(".js-vertical-tab").removeClass("is-active");
+			$tab.addClass("is-active");
+
+			this.$context.find(".js-vertical-tab-accordion-heading").removeClass("is-active");
+			this.$context.find(".js-vertical-tab-accordion-heading[rel^='"+activeTab+"']").addClass("is-active");
+		},
+
+		onHeadingClick: function (event) {
+			event.preventDefault();
+			var $heading = $(event.currentTarget);
+			this.$tabpanels.hide();
+
+			var accordion_activeTab = $heading.attr("rel");
+			this.$context.find("#"+accordion_activeTab).show();
+			
+			this.$context.find(".js-vertical-tab-accordion-heading").removeClass("is-active");
+			$heading.addClass("is-active");
+			
+			this.$context.find(".js-vertical-tab").removeClass("is-active");
+			this.$context.find(".js-vertical-tab[rel^='"+accordion_activeTab+"']").addClass("is-active");
+		}
+	}
+
+	// self initialize
+	$(".vertical-tabs-container").each( function (index, element) {
+		var verticalTabs = new VerticalTabs(element);
+		verticalTabs.init();
+	});
+
+})();
+
