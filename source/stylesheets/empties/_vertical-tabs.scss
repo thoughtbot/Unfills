@@ -2,7 +2,11 @@
   $medium-screen: 30em !default;
   $vertical-tabs-height: 20em;
 
-  @include clearfix;
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
 
   .vertical-tabs {
     display: none;
@@ -29,7 +33,8 @@
     display: block;
 
     @media (min-width: $medium-screen) {
-      @include size(80% $vertical-tabs-height);
+      width: 80%;
+      height: $vertical-tabs-height;
       display: inline-block;
     }
   }

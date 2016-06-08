@@ -13,26 +13,35 @@
     display: none;
 
     + .checkbox {
-      @include size($switch-width $switch-height);
       border: 1px solid #000;
       cursor: pointer;
+      height: $switch-height;
       position: relative;
       width: $switch-width;
       z-index: 0;
 
       &::before {
-        @include position(absolute, $switch-padding 0 0 $switch-padding);
+        bottom: 0;
         content: "";
+        left: $switch-padding;
+        position: absolute;
+        right: 0;
+        top: $switch-padding;
         width: $switch-width - ($switch-padding * 2);
         z-index: 1;
       }
 
       &::after {
-        @include position(absolute, 1px 0 0 1px);
-        @include size($knob-size);
         background-color: #000;
+        bottom: 0;
         content: "";
+        height: $knob-size;
+        left: 1px;
+        position: absolute;
+        right: 0;
+        top: 1px;
         transition: all 0.3s ease;
+        width: $knob-size;
         z-index: 2;
       }
     }

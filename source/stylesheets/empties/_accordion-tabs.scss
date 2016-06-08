@@ -1,8 +1,12 @@
 .accordion-tabs {
   $large-screen: 50em !default;
-
-  @include clearfix;
   padding: 0;
+  
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
 
   .tab-header-and-content {
     list-style: none;

@@ -10,8 +10,12 @@
   }
 
   .tooltip {
-    @include position(absolute, null 0 3em);
-    @include transition(all 0.2s ease-in-out);
+    position: absolute;
+    top: auto;
+    right: 0;
+    left: 0;
+    bottom: 3em;
+    transition: all 0.2s ease-in-out;
     background-color: #f5f5f5;
     margin-left: -2em;
     opacity: 0;
@@ -22,7 +26,11 @@
   }
 
   .tooltip::after {
-    @include position(absolute, null 0 null);
+    position: absolute;
+    top: auto;
+    right: 0;
+    left: 0;
+    bottom: auto;
     bottom: -1em;
     color: #f5f5f5;
     content: "▼";

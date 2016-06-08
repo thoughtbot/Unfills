@@ -24,10 +24,15 @@ footer.empties-footer {
   }
 
   img {
-    @include clearfix;
     display: block;
     height: 60px;
     margin: auto;
+    
+    &::after {
+      clear: both;
+      content: "";
+      display: table;
+    }
   }
 
   .footer-links {

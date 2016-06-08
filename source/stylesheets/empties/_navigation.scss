@@ -9,27 +9,32 @@
     margin: 0;
     padding-top: 0.5em;
 
-    @include media ($medium-screen) {
+    @media (min-width: $medium-screen) {
       display: none;
     }
   }
 
   // Nav menu
   .navigation-wrapper {
-    @include clearfix;
     position: relative;
+
+    &::after {
+      clear: both;
+      content: "";
+      display: table;
+    }
   }
 
   .logo {
     float: left;
 
-    @include media ($medium-screen) {
+    @media (min-width: $medium-screen) {
       float: none;
       text-align: center;
       display: block;
     }
 
-    @include media ($large-screen) {
+    @media (min-width: $large-screen) {
       float: left;
     }
 
@@ -42,7 +47,7 @@
   nav {
     float: none;
 
-    @include media ($medium-screen) {
+    @media (min-width: $medium-screen) {
       float: left;
       text-align: center;
       line-height: 1.5em;
@@ -58,7 +63,7 @@
     padding: 0;
     width: 100%;
 
-    @include media ($medium-screen) {
+    @media (min-width: $medium-screen) {
       display: block;
       margin: 0;
       padding: 0;
@@ -75,7 +80,7 @@
     text-align: right;
     width: 100%;
 
-    @include media ($medium-screen) {
+    @media (min-width: $medium-screen) {
       background: transparent;
       display: inline;
       text-decoration: none;
@@ -86,7 +91,7 @@
   li.nav-link a {
     display: inline-block;
 
-    @include media ($large-screen) {
+    @media (min-width: $large-screen) {
       padding-right: 1em;
     }
   }

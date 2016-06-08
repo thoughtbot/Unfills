@@ -24,7 +24,6 @@
   }
 
   .dropdown-menu {
-    @include transition (all 0.2s ease-in-out);
     cursor: pointer;
     display: none;
     overflow: show;

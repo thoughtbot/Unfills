@@ -1,21 +1,7 @@
 .scroll-on-page {
-  $large-screen: 50em !default;
-
-  aside {
-    @media (min-width: $large-screen) {
-      @include span-columns(4);
-    }
-  }
-
   .scroll-on-page-link {
     display: block;
     outline: none;
-  }
-
-  article {
-    @media (min-width: $large-screen) {
-      @include span-columns(8);
-    }
   }
 }
 

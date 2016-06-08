@@ -1,23 +1,32 @@
 .sliding-panel-content {  
   $sliding-panel-width: 220px;
 
-  @include position(fixed, 0 auto 0 0);
-  @include size($sliding-panel-width 100%);
-  @include transform(translateX(- $sliding-panel-width));
-  @include transition(all 0.25s linear);
+  position: fixed;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: 0;
+  width: $sliding-panel-width;
+  height: 100%;
+  transform: translateX(- $sliding-panel-width);
+  transition: all 0.25s linear;
   background: #fff;
   -webkit-overflow-scrolling: touch;
   overflow-y: auto;
   z-index: 999999;
 
   &.is-visible {
-    @include transform(translateX(0));
+    transform: translateX(0);
   }
 }
 
 .sliding-panel-fade-screen {
-  @include position(fixed, 0 0 0 0);
-  @include transition;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: all 0.25s linear;
   background: #000;
   opacity: 0;
   visibility: hidden;

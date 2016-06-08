@@ -1,11 +1,16 @@
 .empties-header {
-  @include clearfix;
   background-color: $empties-hero-background;
   clear: both;
   margin-bottom: 1em;
   padding: 5em 0;
   text-align: center;
   width: 100%;
+  
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
 
   @media (min-width: $empties-medium-screen) {
     margin-bottom: 4em;
