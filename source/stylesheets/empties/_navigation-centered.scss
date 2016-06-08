@@ -10,7 +10,7 @@
     display: inline;
     float: left;
     
-    @include media($large-screen) {
+    @media (min-width: $large-screen) {
       display: none;
     }
 
@@ -67,7 +67,7 @@
       padding-right: 0;
     }
 
-    @include media($large-screen) {
+    @media (min-width: $large-screen) {
       display: inline;
 
       a {
@@ -81,7 +81,7 @@
     display: none;
     line-height: 0;
 
-    @include media($large-screen) {
+    @media (min-width: $large-screen) {
       display: inline;
     }
   }
