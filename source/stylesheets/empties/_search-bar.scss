@@ -14,7 +14,11 @@
   }
 
   button {
-    @include position(absolute, 0 0 0 null);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: auto;
+    right: 0;
     padding: 5px 10px;
 
   }

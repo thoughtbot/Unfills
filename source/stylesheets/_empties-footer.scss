@@ -14,7 +14,7 @@ footer.empties-footer {
     line-height: 1.5em;
     margin: 0 1em;
 
-    @include media($empties-large-screen) {
+    @media (min-width: $empties-large-screen) {
       font-size: 1em;
     }
   }
@@ -24,10 +24,15 @@ footer.empties-footer {
   }
 
   img {
-    @include clearfix;
     display: block;
     height: 60px;
     margin: auto;
+    
+    &::after {
+      clear: both;
+      content: "";
+      display: table;
+    }
   }
 
   .footer-links {
@@ -40,7 +45,7 @@ footer.empties-footer {
     padding: 0.6em;
     text-transform: uppercase;
 
-    @include media($empties-large-screen) {
+    @media (min-width: $empties-large-screen) {
       font-size: 1em;
       padding: 1em;
     }

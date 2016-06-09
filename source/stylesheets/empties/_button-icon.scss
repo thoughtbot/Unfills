@@ -5,7 +5,8 @@
   width: 100%;
 
   &:before {
-    @include size($icon-size);
+    height: $icon-size;
+    width: $icon-size;
     background-image: url(https://raw.githubusercontent.com/thoughtbot/empties/master/source/images/placeholder_small.png);
     background-repeat: no-repeat;
     background-size: $icon-size;

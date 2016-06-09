@@ -1,18 +1,23 @@
 .empties-header {
-  @include clearfix;
   background-color: $empties-hero-background;
   clear: both;
   margin-bottom: 1em;
   padding: 5em 0;
   text-align: center;
   width: 100%;
+  
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
 
-  @include media($empties-medium-screen) {
+  @media (min-width: $empties-medium-screen) {
     margin-bottom: 4em;
     padding: 6em 0;
   }
 
-  @include media($empties-large-screen) {
+  @media (min-width: $empties-large-screen) {
     border-bottom: 2px solid darken($empties-hero-background, 5%);
     margin-bottom: 4em;
     padding: 6em 0;
@@ -29,7 +34,7 @@
       fill: white;
       padding: 0.3em;
 
-      @include media($empties-medium-screen) {
+      @media (min-width: $empties-medium-screen) {
         @include size(120px);
         padding: 0.5em;
       }
@@ -45,13 +50,13 @@
     max-width: 80%;
     text-align: center;
 
-    @include media($empties-medium-screen) {
+    @media (min-width: $empties-medium-screen) {
       font-size: 2em;
       margin-bottom: 1em;
       max-width: 80%;
     }
 
-    @include media($empties-large-screen) {
+    @media (min-width: $empties-large-screen) {
       font-size: 3em;
       line-height: 1.3em;
       margin-bottom: 0.8em;
@@ -86,7 +91,7 @@
     font-weight: 400;
     padding: 0.5em 1.4em;
 
-    @include media($empties-large-screen) {
+    @media (min-width: $empties-large-screen) {
       font-size: 0.8em;
     }
   }

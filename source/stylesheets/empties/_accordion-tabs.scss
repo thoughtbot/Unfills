@@ -1,13 +1,17 @@
 .accordion-tabs {
   $large-screen: 50em !default;
-
-  @include clearfix;
   padding: 0;
+  
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
 
   .tab-header-and-content {
     list-style: none;
 
-    @include media($large-screen) {
+    @media (min-width: $large-screen) {
       display: inline;
     }
   }
@@ -16,7 +20,7 @@
     display: block;
     padding-right: 1em;
 
-    @include media($large-screen) {
+    @media (min-width: $large-screen) {
       display: inline-block;
     }
   }
@@ -29,7 +33,7 @@
     display: none;
     width: 100%;
 
-    @include media($large-screen) {
+    @media (min-width: $large-screen) {
       float: left;
     }
   }
