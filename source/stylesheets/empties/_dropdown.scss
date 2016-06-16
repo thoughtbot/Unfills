@@ -27,7 +27,7 @@
     @include transition (all 0.2s ease-in-out);
     cursor: pointer;
     display: none;
-    overflow: show;
+    overflow: visible;
     position: absolute;
     text-align: left;
     top: $dropdown-distance-from-menu;
